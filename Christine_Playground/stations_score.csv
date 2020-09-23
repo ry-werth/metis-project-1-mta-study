@@ -1,0 +1,85 @@
+,stations,university,tech,rich,total score
+0,1 AV,False,True,True,3
+1,116 ST-COLUMBIA,True,False,False,4
+2,135 ST,True,False,False,4
+3,137 ST CITY COL,True,False,False,4
+4,14 ST,False,True,True,3
+5,14 ST-UNION SQ,False,False,True,1
+6,145 ST,True,False,False,4
+7,15 ST-PROSPECT,False,True,False,2
+8,21 ST,False,True,False,2
+9,21 ST-QNSBRIDGE,False,True,False,2
+10,23 ST,True,True,True,7
+11,25 ST,False,True,False,2
+12,28 ST,True,True,True,7
+13,30 AV,False,True,False,2
+14,33 ST,False,False,True,1
+15,33 ST-RAWSON ST,False,True,False,2
+16,34 ST-HERALD SQ,False,False,True,1
+17,34 ST-HUDSON YD,False,False,True,1
+18,34 ST-PENN STA,False,False,True,1
+19,36 ST,False,True,False,2
+20,42 ST-BRYANT PK,False,False,True,1
+21,42 ST-PORT AUTH,False,False,True,1
+22,45 ST,False,True,False,2
+23,47-50 STS ROCK,False,False,True,1
+24,49 ST,False,False,True,1
+25,5 AV/53 ST,False,False,True,1
+26,5 AVE,False,False,True,1
+27,50 ST,False,False,True,1
+28,51 ST,False,False,True,1
+29,53 ST,False,True,False,2
+30,57 ST,False,False,True,1
+31,59 ST,False,True,True,3
+32,59 ST COLUMBUS,False,False,True,1
+33,66 ST-LINCOLN,False,False,True,1
+34,7 AV,False,True,False,2
+35,72 ST,False,False,True,1
+36,8 AV,False,True,False,2
+37,8 ST-NYU,True,True,False,6
+38,86 ST,False,False,True,1
+39,9 AV,False,True,False,2
+40,96 ST,False,False,True,1
+41,9TH STREET,False,True,False,2
+42,ASTOR PL,False,True,True,3
+43,BAY RIDGE AV,False,True,False,2
+44,BLEECKER ST,True,True,True,7
+45,BOWERY,False,True,False,2
+46,BOWLING GREEN,False,False,True,1
+47,BROOKLYN BRIDGE,False,True,False,2
+48,CANAL ST,False,True,True,3
+49,CATHEDRAL PKWY,True,False,False,4
+50,CHAMBERS ST,False,True,True,3
+51,CHRISTOPHER ST,False,False,True,1
+52,CHURCH AV,False,True,False,2
+53,CLARK ST,False,True,False,2
+54,COURT SQ,False,True,False,2
+55,DEKALB AV,False,True,False,2
+56,DELANCEY/ESSEX,False,True,True,3
+57,FORDHAM RD,True,False,False,4
+58,FRANKLIN ST,False,True,True,3
+59,FT HAMILTON PKY,False,True,False,2
+60,FULTON ST,False,True,True,3
+61,GRAND ARMY PLAZ,False,True,False,2
+62,GRD CNTRL-42 ST,False,False,True,1
+63,HIGH ST,False,True,False,2
+64,HOUSTON ST,False,True,True,3
+65,HUNTERS PT AV,False,True,False,2
+66,LEXINGTON AV/63,False,False,True,1
+67,NEWKIRK PLAZA,False,True,False,2
+68,PRINCE ST,False,True,True,3
+69,PROSPECT AV,False,True,False,2
+70,QUEENS PLAZA,False,True,False,2
+71,QUEENSBORO PLZ,False,True,False,2
+72,ROOSEVELT ISLND,False,False,True,1
+73,SMITH-9 ST,False,True,False,2
+74,SPRING ST,False,True,True,3
+75,STEINWAY ST,False,True,False,2
+76,TIMES SQ-42 ST,False,False,True,1
+77,VERNON-JACKSON,False,True,True,3
+78,W 4 ST-WASH SQ,True,True,True,7
+79,WALL ST,False,False,True,1
+80,WHITEHALL S-FRY,False,False,True,1
+81,WORLD TRADE CTR,False,True,True,3
+82,WTC-CORTLANDT,False,True,True,3
+83,YORK ST,False,True,False,2
