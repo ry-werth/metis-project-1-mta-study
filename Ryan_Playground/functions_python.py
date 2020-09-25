@@ -1,4 +1,7 @@
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+
 
 def combine_dfs_add_time(dataframe_date_list):
     """
@@ -164,17 +167,55 @@ def create_interested_colored_bar_graph(df, num_stations):
     """
 
     color_mapper = {
-        "7":'g',
-        "6":'b',
-        "5":'y',
-        "4":'y',
-        "3":'orange',
-        "2":'r',
-        "1":'r',
-        "0":'r',
+        "7":'#1DB91D',
+        "6":'#1DB91D',
+        "5":'#1DB91D',
+        "4":'#1DB91D',
+        "3":'#1DACD6',
+        "2":'grey',
+        "1":'grey',
+        "0":'grey',
     }
 
     df["color"] = df["total score"].astype(str).map(color_mapper)
 
     return(df.head(num_stations).plot.bar(x='STATION', y='COMBINED', color=df["color"], figsize=(10,5)))
     plt.xticks(rotation=90);
+
+def create_day_of_week_stacked_bar_graph(df, filtered_station_df):
+    """
+    Feed it a dataframe with Station, day of week, and traffic info, as well as a list of stations you want to focus on
+    returns a stacked bar graph of the stations and days of the week traffic, descending order
+    """
+    reset_df = df.reset_index()
+    # filter out only the stations that are in our leader stations
+    leader_daily_avgs = reset_df[reset_df["STATION"].isin(filtered_station_df)]
+    # find the total traffice per week per station so we can sort by this value
+    total_in_week = leader_daily_avgs.groupby("STATION")[["COMBINED"]].sum().rename(columns={'COMBINED':'COMBINED_WEEK'})
+    # merge in that weekly traffic to our df
+    leader_daily_avgs = pd.merge(leader_daily_avgs, total_in_week, on="STATION")
+    # sort by weekly traffic so the station with the highest traffic is shown first
+    df = leader_daily_avgs.sort_values(by=["COMBINED_WEEK"], ascending=False)
+
+
+    monday = np.array(df[df["DAY_STR"]=="Monday"]["COMBINED"])
+    tuesday = np.array(df[df["DAY_STR"]=="Tuesday"]["COMBINED"])
+    wednesday = np.array(df[df["DAY_STR"]=="Wednesday"]["COMBINED"])
+    thursday = np.array(df[df["DAY_STR"]=="Thursday"]["COMBINED"])
+    friday = np.array(df[df["DAY_STR"]=="Friday"]["COMBINED"])
+    saturday = np.array(df[df["DAY_STR"]=="Saturday"]["COMBINED"])
+    sunday = np.array(df[df["DAY_STR"]=="Sunday"]["COMBINED"])
+    stations = df[df["DAY_STR"]=="Sunday"]["STATION"]
+
+    plt.bar(stations, sunday, width=0.6, label='sunday', color='#694B36', bottom=saturday+friday+thursday+wednesday+tuesday+monday)
+    plt.bar(stations, saturday, width=0.6, label='saturday', color='#D67431', bottom=friday+thursday+wednesday+tuesday+monday)
+    plt.bar(stations, friday, width=0.6, label='friday', color='#752E9C', bottom=thursday+wednesday+tuesday+monday)
+    plt.bar(stations, thursday, width=0.6, label='thursday', color='#3781CC', bottom=wednesday+tuesday+monday)
+    plt.bar(stations, wednesday, width=0.6, label='wednesday', color='#E30D45', bottom=tuesday+monday)
+    plt.bar(stations, tuesday, width=0.6, label='tuesday', color='#ECBE5B', bottom=monday)
+    plt.bar(stations, monday, width=0.6, label='monday', color='#266931')
+    plt.xticks(rotation=90)
+    plt.legend(loc='upper right')
+    plt.show();
+
+
