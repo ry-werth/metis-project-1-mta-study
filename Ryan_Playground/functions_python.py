@@ -134,7 +134,7 @@ def avg_per_day_of_week(df):
 
     # cobine the entries and exits and sort to get the most popuklar days at what stations
     avg_daily_per_station["COMBINED"] = avg_daily_per_station["ENTRIES_DIFF"] + avg_daily_per_station["EXIT_DIFF"]
-    avg_daily_per_station.sort_values(by=["COMBINED"], ascending=False)
+    # avg_daily_per_station.sort_values(by=["COMBINED"], ascending=False)
 
     return avg_daily_per_station
 
@@ -155,7 +155,7 @@ def avg_per_day_of_week_and_time(df):
 
     # cobine the entries and exits and sort to get the most popular days and times at each stations
     avg_hourly_per_station["COMBINED"] = avg_hourly_per_station["ENTRIES_DIFF"] + avg_hourly_per_station["EXIT_DIFF"]
-    avg_hourly_per_station.sort_values(by=["COMBINED"], ascending=False).head(50)
+    # avg_hourly_per_station.sort_values(by=["COMBINED"], ascending=False).head(50)
 
     return avg_hourly_per_station
 
@@ -172,9 +172,9 @@ def create_interested_colored_bar_graph(df, num_stations):
         "5":'#1DB91D',
         "4":'#1DB91D',
         "3":'#1DACD6',
-        "2":'grey',
-        "1":'grey',
-        "0":'grey',
+        "2":'#bab9b7',
+        "1":'#bab9b7',
+        "0":'#bab9b7',
     }
 
     df["color"] = df["total score"].astype(str).map(color_mapper)
@@ -207,13 +207,13 @@ def create_day_of_week_stacked_bar_graph(df, filtered_station_df):
     sunday = np.array(df[df["DAY_STR"]=="Sunday"]["COMBINED"])
     stations = df[df["DAY_STR"]=="Sunday"]["STATION"]
 
-    plt.bar(stations, sunday, width=0.6, label='sunday', color='#694B36', bottom=saturday+friday+thursday+wednesday+tuesday+monday)
-    plt.bar(stations, saturday, width=0.6, label='saturday', color='#D67431', bottom=friday+thursday+wednesday+tuesday+monday)
-    plt.bar(stations, friday, width=0.6, label='friday', color='#752E9C', bottom=thursday+wednesday+tuesday+monday)
-    plt.bar(stations, thursday, width=0.6, label='thursday', color='#3781CC', bottom=wednesday+tuesday+monday)
-    plt.bar(stations, wednesday, width=0.6, label='wednesday', color='#E30D45', bottom=tuesday+monday)
-    plt.bar(stations, tuesday, width=0.6, label='tuesday', color='#ECBE5B', bottom=monday)
-    plt.bar(stations, monday, width=0.6, label='monday', color='#266931')
+    plt.bar(stations, sunday, width=0.6, label='Sunday', color='#694B36', bottom=saturday+friday+thursday+wednesday+tuesday+monday)
+    plt.bar(stations, saturday, width=0.6, label='Saturday', color='#D67431', bottom=friday+thursday+wednesday+tuesday+monday)
+    plt.bar(stations, friday, width=0.6, label='Friday', color='#752E9C', bottom=thursday+wednesday+tuesday+monday)
+    plt.bar(stations, thursday, width=0.6, label='Thursday', color='#3781CC', bottom=wednesday+tuesday+monday)
+    plt.bar(stations, wednesday, width=0.6, label='Wednesday', color='#E30D45', bottom=tuesday+monday)
+    plt.bar(stations, tuesday, width=0.6, label='Tuesday', color='#ECBE5B', bottom=monday)
+    plt.bar(stations, monday, width=0.6, label='Monday', color='#266931')
     plt.xticks(rotation=90)
     plt.legend(loc='upper right')
     plt.show();
