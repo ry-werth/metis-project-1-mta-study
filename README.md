@@ -38,6 +38,22 @@ As a group we first created a dataset of MTA stations with each getting a custom
 ## Data
 The Turnstyle data was taken from the public [MTA Page](http://web.mta.info/developers/turnstile.html)
 
+## Results
+We found that ridership in August 2020 was less than 25% that of 2019 (because of Corona), so we ended up analyzing the August and September 2019 turnstyle data. After findting the popular stations and comparing those to the stations we determined were in an "important" location we came up with a list of ten MTA stations to target.
+
+- 23 st
+- Fulton St
+- Canal St
+- 59 st
+- 14 st
+- Chambers st
+- W 4 ST-WASH SQ
+- 28 ST
+- 145 ST
+- DELANCEY/ESSEX
+
+This info can be foun in the [focused_stations file](https://github.com/ry-werth/metis-project-1-mta-study/blob/master/MTA_Turnstyle_Analysis/focused_station.csv) where we have the station info and daily traffic stats through August and September.
+
 
 
 
