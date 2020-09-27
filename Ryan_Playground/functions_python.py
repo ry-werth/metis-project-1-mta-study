@@ -1,3 +1,7 @@
+"""
+File containing all the cleaning, analyzing, and graphing functions used throughout our work
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -179,8 +183,8 @@ def create_interested_colored_bar_graph(df, num_stations):
 
     df["color"] = df["total score"].astype(str).map(color_mapper)
 
-    return(df.head(num_stations).plot.bar(x='STATION', y='COMBINED', color=df["color"], figsize=(10,5)))
-    plt.xticks(rotation=90);
+    return(df.head(num_stations).plot.bar(x='STATION', y='COMBINED', color=df["color"], figsize=(15,5)))
+    plt.xticks(rotation=45);
 
 def create_day_of_week_stacked_bar_graph(df, filtered_station_df):
     """
@@ -207,6 +211,10 @@ def create_day_of_week_stacked_bar_graph(df, filtered_station_df):
     sunday = np.array(df[df["DAY_STR"]=="Sunday"]["COMBINED"])
     stations = df[df["DAY_STR"]=="Sunday"]["STATION"]
 
+    plt.figure(figsize=[10,7])
+    plt.ylabel('Total Traffic', fontsize = 14);
+    plt.xlabel('Station', fontsize = 14);
+    plt.title('Average Weekly Traffic', family='serif', fontsize = 20)
     plt.bar(stations, sunday, width=0.6, label='Sunday', color='#694B36', bottom=saturday+friday+thursday+wednesday+tuesday+monday)
     plt.bar(stations, saturday, width=0.6, label='Saturday', color='#D67431', bottom=friday+thursday+wednesday+tuesday+monday)
     plt.bar(stations, friday, width=0.6, label='Friday', color='#752E9C', bottom=thursday+wednesday+tuesday+monday)
@@ -216,6 +224,8 @@ def create_day_of_week_stacked_bar_graph(df, filtered_station_df):
     plt.bar(stations, monday, width=0.6, label='Monday', color='#266931')
     plt.xticks(rotation=90)
     plt.legend(loc='upper right')
-    plt.show();
+    plt.show()
+    # plt.savefig('week_day_stacked_traffic.png');
+    return(plt);
 
 
