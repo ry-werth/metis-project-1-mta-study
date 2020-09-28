@@ -24,7 +24,8 @@ An email from a potential client:
 >
 > WTWY International
 
-# This Repo attempts to analyze MTA turnstyle data and outher sources to address the above email
+# Goal/Reason for Repo
+This Repo attempts to analyze MTA turnstyle data and outher sources to address the above email. We look at mta ridership as well as station locations to determine optimal stations for the WTWY organization to target in order to recieve the largest response both from donors and simply people potentially interested in their cause/gala. 
 
 ## MTA Analysis
 This is Where the bulk of the project is. 
@@ -52,7 +53,9 @@ We found that ridership in August 2020 was less than 25% that of 2019 (because o
 - 145 ST
 - DELANCEY/ESSEX
 
-This info can be foun in the [focused_stations file](https://github.com/ry-werth/metis-project-1-mta-study/blob/master/MTA_Turnstyle_Analysis/focused_station.csv) where we have the station info and daily traffic stats through August and September.
+This final station info can be found in the [focused_stations file](https://github.com/ry-werth/metis-project-1-mta-study/blob/master/MTA_Turnstyle_Analysis/focused_station.csv) where we have the station info and daily traffic stats through August and September.
+
+Additionally we determined that weekdays were far surperior days than weekends were, but that there wasn't a considerable difference between individual weekdays. As far as what time of day, we found that the afternoon (12-8) was the most popular block, but these findings are very basic and could definetly use some refining. 
 
 
 
